@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator | DevTunisian</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="qr-code.png" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <div class="tabs">
+      <button class="tab-button" onclick="switchTab('wifi')"> <i class="fa-solid fa-wifi fa-xl"></i> </button>
+      <button class="tab-button" onclick="switchTab('cv')"> <i class="fa-solid fa-user-alt fa-xl"></i> </button>
+      <button class="tab-button" onclick="switchTab('social')"> <i class="fa-solid fa-hashtag fa-xl"></i> </button>
+      <button class="tab-button" onclick="switchTab('website')"> <i class="fa-solid fa-code fa-xl"></i> </button>
+    </div>
+    <div class="content">
+      <div id="wifi" class="tab-content">
+        <!-- Wi-Fi QR Code Form -->
+        <label for="wifi-ssid">SSID:</label>
+        <input type="text" id="wifi-ssid" placeholder="Enter SSID">
+        <label for="wifi-password">Password:</label>
+        <input type="password" id="wifi-password" placeholder="Enter Password">
+        <button onclick="generateQRCode('wifi')">Generate Wi-Fi QR Code</button>
+      </div>
+      <div id="cv" class="tab-content">
+        <!-- CV QR Code Form -->
+        <label for="cv-name">Name:</label>
+        <input type="text" id="cv-name" placeholder="Enter Name">
+        <label for="cv-email">Email:</label>
+        <input type="email" id="cv-email" placeholder="Enter Email">
+        <!-- Add other CV fields as needed -->
+        <button onclick="generateQRCode('cv')">Generate CV QR Code</button>
+      </div>
+      <div id="social" class="tab-content">
+        <!-- Social Media QR Code Form -->
+        <label for="social-platform">Platform:</label>
+        <select id="social-platform">
+          <option value="facebook">Facebook</option>
+          <option value="twitter">Twitter</option>
+          <option value="instagram">Instagram</option>
+          <option value="instagram">Discord</option>
+          <option value="instagram">other</option>
+          <!-- Add more social media platforms as needed -->
+        </select>
+        <label for="social-username">Username:</label>
+        <input type="text" id="social-username" placeholder="Enter Username">
+        <!-- Add other social media fields as needed -->
+        <button onclick="generateQRCode('social')">Generate Social Media QR Code</button>
+      </div>
+      <div id="website" class="tab-content">
+        <!-- Website QR Code Form -->
+        <label for="website-url">Website URL:</label>
+        <input type="text" id="website-url" placeholder="Enter Website URL">
+        <button onclick="generateQRCode('website')">Generate Website QR Code</button>
+      </div>
+    </div>
+    <div class="qr-code-container">
+      <img id="qr-code" src="#" alt="Generated QR Code">
+      <button id="download-btn" onclick="downloadQRCode()">Download QR Code</button>
+    </div><br>
+    <div class="copy-right">
+      &copy;2023 by QrGenerator | DevTunisian
+      <hr>
+      <div class="social-media">
+        <h4> Follow us on our social medias:</h4>
+        <div class="social-content">
+          <a href="https://www.facebook.com/groups/6772196932792430"><i class="fa-brands fa-facebook fa-2xl" style="color: rgb(2, 142, 223);"></i></a>
+          <a href="https://www.instagram.com/jasserabedrazzek/"><i class="fa-brands fa-instagram fa-2xl" style="color: #b607a7;"></i></a>
+          <a href="https://discord.gg/HFtfNdFv"><i class="fa-brands fa-discord fa-2xl" style="color: #0508ac;"></i></a>
+          <a href="https://devtunisian.netlify.app/"><img src="logo.png" alt="DevTunisian" class="logo"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>
